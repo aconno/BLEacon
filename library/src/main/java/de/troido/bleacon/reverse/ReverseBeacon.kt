@@ -8,15 +8,11 @@ import de.troido.bleacon.ble.BleActor
 import de.troido.bleacon.ble.HandledBleActor
 import de.troido.bleacon.config.advertise.adSettings
 import de.troido.bleacon.config.advertise.bleAdData
-import de.troido.bleacon.config.scan.IDENTITY
-import de.troido.bleacon.config.scan.UUID128_TRANSFORM
-import de.troido.bleacon.config.scan.UUID16_TRANSFORM
-import de.troido.bleacon.config.scan.bleFilter
-import de.troido.bleacon.config.scan.scanSettings
+import de.troido.bleacon.config.scan.*
 import de.troido.bleacon.data.BleDeserializer
 import de.troido.bleacon.scanner.BeaconScanner
 import de.troido.ekstend.uuid.Uuid16
-import java.util.UUID
+import java.util.*
 
 /**
  * A “reverse” beacon, in the sense that the device both advertises that it's looking for the
@@ -47,7 +43,7 @@ class ReverseBeacon<out T>(
             handler: Handler = Handler(),
             reverseBeaconListener: ReverseBeaconListener<T>
     ) : this(deserializer, uuid16, uuid128, scanSettings, adSettings, handler,
-             reverseBeaconListener::onBeaconFound)
+            reverseBeaconListener::onBeaconFound)
 
     private val scanner = BeaconScanner(
             deserializer,
@@ -56,9 +52,9 @@ class ReverseBeacon<out T>(
                     uuid128 = this@ReverseBeacon.uuid128
             ),
             when {
-                uuid16 != null  -> UUID16_TRANSFORM
+                uuid16 != null -> UUID16_TRANSFORM
                 uuid128 != null -> UUID128_TRANSFORM
-                else            -> IDENTITY
+                else -> IDENTITY
             },
             scanSettings,
             handler

@@ -10,7 +10,7 @@ import android.os.Handler
 import de.troido.bleacon.ble.HandledBleActor
 import de.troido.bleacon.ble.obtainScanner
 import de.troido.bleacon.config.scan.scanSettings
-import java.util.UUID
+import java.util.*
 
 /**
  * A more idiomatic wrapper for [android.bluetooth.le.BluetoothLeScanner].

@@ -54,7 +54,7 @@ class BeaconnoScanner<T>(context: Context,
             result.scanRecord
                     ?.let {
                         BeaconnoDevice(context, deserializer, dataTransform, it,
-                                       BeaconMetaData(result.device, result.rssi, it.txPowerLevel))
+                                BeaconMetaData(result.device, result.rssi, it.txPowerLevel))
                     }
                     ?.let { listener(this@BeaconnoScanner, it) }
         }

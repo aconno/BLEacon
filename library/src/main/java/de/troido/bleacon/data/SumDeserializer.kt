@@ -13,7 +13,7 @@ class SumDeserializer<out T>(
 
     override fun deserialize(data: ByteArray): T? = when {
         data.isEmpty() -> null
-        else           -> deserializers[data[0] and prefixMask]
+        else -> deserializers[data[0] and prefixMask]
                 ?.takeIf { it.matchesLength(data) }
                 ?.deserialize(if (removePrefix) data.copyOfRange(1) else data)
     }

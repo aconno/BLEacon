@@ -4,7 +4,7 @@ import android.bluetooth.le.AdvertiseData
 import de.troido.bleacon.ble.NORDIC_ID
 import de.troido.ekstend.uuid.Uuid16
 import de.troido.ekstend.uuid.bytes
-import java.util.UUID
+import java.util.*
 
 @JvmOverloads
 fun bleAdData(uuid16: Uuid16? = null,

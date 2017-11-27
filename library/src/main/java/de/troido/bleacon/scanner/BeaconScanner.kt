@@ -47,16 +47,16 @@ class BeaconScanner<out T>(
                         ?.let {
                             when (deserializer.length) {
                                 BleDeserializer.ALL -> it
-                                else                -> it.copyOfRange(0, deserializer.length)
+                                else -> it.copyOfRange(0, deserializer.length)
                             }
                         }
                         ?.let(deserializer::deserialize)
                         ?.let {
                             onDeviceFound(this@BeaconScanner,
-                                          BeaconMetaData(device,
-                                                         result.rssi,
-                                                         result.scanRecord.txPowerLevel),
-                                          it)
+                                    BeaconMetaData(device,
+                                            result.rssi,
+                                            result.scanRecord.txPowerLevel),
+                                    it)
                         }
             }
         }

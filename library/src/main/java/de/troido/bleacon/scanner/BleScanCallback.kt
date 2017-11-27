@@ -4,7 +4,7 @@ import android.bluetooth.BluetoothGatt
 import android.bluetooth.BluetoothGattCallback
 import android.bluetooth.BluetoothGattCharacteristic
 import android.bluetooth.BluetoothProfile
-import java.util.UUID
+import java.util.*
 
 interface BleScanCallback {
     fun onConnect() = Unit
@@ -40,7 +40,7 @@ internal fun BleScanCallback.toBtGattCallback(
                 super.onConnectionStateChange(gatt, status, newState)
 
                 when (newState) {
-                    BluetoothProfile.STATE_CONNECTED    -> {
+                    BluetoothProfile.STATE_CONNECTED -> {
                         gatt?.discoverServices()
                         onConnect()
                     }

@@ -40,11 +40,11 @@ class BleAdvertiser
         handler.post {
             logD("starting advertising...")
             when (dataMode) {
-                BleAdDataMode.SCAN_RESPONSE       ->
+                BleAdDataMode.SCAN_RESPONSE ->
                     advertiser.startAdvertising(settings, data, data, callback)
                 BleAdDataMode.EMPTY_SCAN_RESPONSE ->
                     advertiser.startAdvertising(settings, data, bleAdData(), callback)
-                BleAdDataMode.NO_SCAN_RESPONSE    ->
+                BleAdDataMode.NO_SCAN_RESPONSE ->
                     advertiser.startAdvertising(settings, data, callback)
             }
         }
