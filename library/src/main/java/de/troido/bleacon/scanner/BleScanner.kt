@@ -69,6 +69,9 @@ class BleScanner(context: Context,
     }
 
     override fun stop() {
-        handler.post { scanner.stopScan(null) }
+        handler.post {
+            val callback: ScanCallback? = null
+            scanner.stopScan(callback)
+        }
     }
 }

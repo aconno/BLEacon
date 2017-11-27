@@ -1,26 +1,22 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 26
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 16
         targetSdkVersion 26
-        versionCode 41
-        versionName "3.10.4"
+        versionCode 17
+        versionName "1.2.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        setProperty("archivesBaseName", "bleacon")
+        setProperty("archivesBaseName", "androidekstensions")
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
     }
 }
 
@@ -31,15 +27,14 @@ dependencies {
     })
     testCompile 'junit:junit:4.12'
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
     compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:support-v4:26.1.0'
+    compile 'com.android.support:design:26.1.0'
 
-    compile project(':ekstend')
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 
 repositories {
     mavenCentral()
     maven { url 'https://maven.google.com' }
-    maven { url 'https://jitpack.io' }
 }
