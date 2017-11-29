@@ -4,7 +4,7 @@ import android.bluetooth.le.ScanFilter
 import de.troido.bleacon.ble.NORDIC_ID
 import de.troido.ekstend.uuid.Uuid16
 import de.troido.ekstend.uuid.bytes
-import java.util.UUID
+import java.util.*
 
 private val UUID16_MASK = ByteArray(2) { -1 }
 private val UUID128_MASK = ByteArray(16) { -1 }

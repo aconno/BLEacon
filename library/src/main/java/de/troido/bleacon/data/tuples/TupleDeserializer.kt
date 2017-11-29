@@ -1,12 +1,7 @@
 package de.troido.bleacon.data.tuples
 
 import de.troido.bleacon.data.BleDeserializer
-import de.troido.ekstend.functional.tuples.Tuple4
-import de.troido.ekstend.functional.tuples.Tuple5
-import de.troido.ekstend.functional.tuples.Tuple6
-import de.troido.ekstend.functional.tuples.Tuple7
-import de.troido.ekstend.functional.tuples.Tuple8
-import de.troido.ekstend.functional.tuples.Tuple9
+import de.troido.ekstend.functional.tuples.*
 
 fun <A : Any, B : Any> tupleDeserializer(
         deserializerA: BleDeserializer<A>, deserializerB: BleDeserializer<B>
@@ -31,7 +26,7 @@ fun <A : Any, B : Any, C : Any, D : Any, E : Any> tupleDeserializer(
         deserializerE: BleDeserializer<E>
 ): BleDeserializer<Tuple5<A, B, C, D, E>> =
         Tuple5Deserializer(deserializerA, deserializerB, deserializerC, deserializerD,
-                           deserializerE)
+                deserializerE)
 
 fun <A : Any, B : Any, C : Any, D : Any, E : Any, F : Any> tupleDeserializer(
         deserializerA: BleDeserializer<A>, deserializerB: BleDeserializer<B>,
@@ -39,7 +34,7 @@ fun <A : Any, B : Any, C : Any, D : Any, E : Any, F : Any> tupleDeserializer(
         deserializerE: BleDeserializer<E>, deserializerF: BleDeserializer<F>
 ): BleDeserializer<Tuple6<A, B, C, D, E, F>> =
         Tuple6Deserializer(deserializerA, deserializerB, deserializerC, deserializerD,
-                           deserializerE, deserializerF)
+                deserializerE, deserializerF)
 
 fun <A : Any, B : Any, C : Any, D : Any, E : Any, F : Any, G : Any> tupleDeserializer(
         deserializerA: BleDeserializer<A>, deserializerB: BleDeserializer<B>,
@@ -48,7 +43,7 @@ fun <A : Any, B : Any, C : Any, D : Any, E : Any, F : Any, G : Any> tupleDeseria
         deserializerG: BleDeserializer<G>
 ): BleDeserializer<Tuple7<A, B, C, D, E, F, G>> =
         Tuple7Deserializer(deserializerA, deserializerB, deserializerC, deserializerD,
-                           deserializerE, deserializerF, deserializerG)
+                deserializerE, deserializerF, deserializerG)
 
 fun <A : Any, B : Any, C : Any, D : Any, E : Any, F : Any, G : Any, H : Any> tupleDeserializer(
         deserializerA: BleDeserializer<A>, deserializerB: BleDeserializer<B>,
@@ -57,7 +52,7 @@ fun <A : Any, B : Any, C : Any, D : Any, E : Any, F : Any, G : Any, H : Any> tup
         deserializerG: BleDeserializer<G>, deserializerH: BleDeserializer<H>
 ): BleDeserializer<Tuple8<A, B, C, D, E, F, G, H>> =
         Tuple8Deserializer(deserializerA, deserializerB, deserializerC, deserializerD,
-                           deserializerE, deserializerF, deserializerG, deserializerH)
+                deserializerE, deserializerF, deserializerG, deserializerH)
 
 fun <A : Any, B : Any, C : Any, D : Any, E : Any, F : Any, G : Any, H : Any,
         I : Any> tupleDeserializer(
@@ -68,5 +63,5 @@ fun <A : Any, B : Any, C : Any, D : Any, E : Any, F : Any, G : Any, H : Any,
         deserializerI: BleDeserializer<I>
 ): BleDeserializer<Tuple9<A, B, C, D, E, F, G, H, I>> =
         Tuple9Deserializer(deserializerA, deserializerB, deserializerC, deserializerD,
-                           deserializerE, deserializerF, deserializerG, deserializerH,
-                           deserializerI)
+                deserializerE, deserializerF, deserializerG, deserializerH,
+                deserializerI)

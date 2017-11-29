@@ -6,7 +6,7 @@ import android.bluetooth.BluetoothGattCharacteristic
 import android.bluetooth.BluetoothProfile
 import de.troido.bleacon.scanner.BleChrWriter
 import de.troido.bleacon.scanner.OneTimeBleChrWriter
-import java.util.UUID
+import java.util.*
 
 typealias OnBeaconno<T> = (scanner: BeaconnoScanner<T>, device: BeaconnoDevice<T>) -> Unit
 typealias OnBeaconnoData<T> = (data: T) -> Unit
@@ -26,7 +26,7 @@ fun bleConnectionCallback(svcUuid: UUID,
                           listener: OnBeaconnoConnection
 ): BluetoothGattCallback =
         bleConnectionCallback(svcUuid, chrUuid, writerCtor, listener::onConnect,
-                              listener::onDisconnect, listener::onBeaconnoWriter)
+                listener::onDisconnect, listener::onBeaconnoWriter)
 
 fun bleConnectionCallback(svcUuid: UUID,
                           chrUuid: UUID,
@@ -42,7 +42,7 @@ fun bleConnectionCallback(svcUuid: UUID,
         super.onConnectionStateChange(gatt, status, newState)
 
         when (newState) {
-            BluetoothProfile.STATE_CONNECTED    -> {
+            BluetoothProfile.STATE_CONNECTED -> {
                 gatt?.discoverServices()
                 onConnect()
             }

@@ -19,8 +19,8 @@ class BeaconnoDevice<out T>(private val context: Context,
                 ?.let {
                     when (deserializer.length) {
                         BleDeserializer.ALL -> it
-                        in 0..it.size       -> it.copyOfRange(0, deserializer.length)
-                        else                -> null
+                        in 0..it.size -> it.copyOfRange(0, deserializer.length)
+                        else -> null
                     }
                 }
                 ?.let(deserializer::deserialize)
